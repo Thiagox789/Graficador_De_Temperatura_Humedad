@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, send_from_directory
 import json
 import os
 
@@ -34,5 +34,9 @@ def get_data():
     # Devolver los datos como un JSON
     return jsonify({'temperatura': temperatura, 'humedad': humedad, 'fecha': fecha})
 
+@app.route('/static/sonidos/<path:filename>')
+def sonidos(filename):
+    """Sirve los archivos de sonido desde la carpeta static/sonidos."""
+    return send_from_directory('static/sonidos', filename)
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
