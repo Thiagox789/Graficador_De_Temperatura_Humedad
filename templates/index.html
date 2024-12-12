@@ -1,9 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Datos de Temperatura y Humedad</title>
+    <style>
+        /* Resetear márgenes y paddings */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Fondo y color general */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #333;
+            font-size: 24px;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Estilo para la gráfica */
+        #grafica {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        /* Estilo para los valores de temperatura y humedad */
+        h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        span {
+            font-size: 20px;
+            font-weight: bold;
+            color: #0056b3;
+        }
+
+        /* Estilo para la sección de datos */
+        .data-section {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 10px;
+        }
+
+        .data-item {
+            background-color: #e0f7fa;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 120px;
+            text-align: center;
+        }
+
+        .data-item h3 {
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .data-item span {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
     <script>
         // Función para obtener los datos de temperatura, humedad y fecha desde Flask
         function obtenerDatos() {
@@ -31,13 +114,27 @@
     </script>
 </head>
 <body>
-    <h1>Gráfica de Temperatura y Humedad</h1>
-    <!-- Mostrar la gráfica generada en Python -->
-    <img id="grafica" src="/static/grafica.png" alt="Gráfica de datos" style="max-width: 100%; height: auto;">
-    
-    <!-- Mostrar la temperatura, humedad y fecha más recientes -->
-    <h2>Temperatura: <span id="temperatura">Cargando...</span> °C</h2>
-    <h2>Humedad: <span id="humedad">Cargando...</span> %</h2>
-    <h2>Fecha: <span id="fecha">Cargando...</span></h2>
+    <div class="container">
+        <h1>Datos de Temperatura y Humedad</h1>
+
+        <!-- Mostrar la gráfica generada en Python -->
+        <img id="grafica" src="/static/grafica.png" alt="Gráfica de datos">
+
+        <!-- Mostrar los valores más recientes de temperatura y humedad -->
+        <div class="data-section">
+            <div class="data-item">
+                <h3>Temperatura</h3>
+                <span id="temperatura">{{ temperatura if temperatura is not none else 'Cargando...' }}</span> °C
+            </div>
+            <div class="data-item">
+                <h3>Humedad</h3>
+                <span id="humedad">{{ humedad if humedad is not none else 'Cargando...' }}</span> %
+            </div>
+            <div class="data-item">
+                <h3>Tiempo</h3>
+                <span id="fecha">{{ fecha_hora if fecha_hora is not none else 'Cargando...' }}</span>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
