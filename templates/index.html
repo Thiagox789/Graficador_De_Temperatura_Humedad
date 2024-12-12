@@ -4,9 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Datos de Temperatura y Humedad</title>
+    <script>
+        // Función para obtener los datos de temperatura, humedad y fecha desde Flask
+        function obtenerDatos() {
+            fetch('/get_data')
+                .then(response => response.json())
+                .then(data => {
+                    // Actualizar los valores de temperatura, humedad y fecha en el HTML
+                    document.getElementById('temperatura').textContent = data.temperatura || 'Cargando...';
+                    document.getElementById('humedad').textContent = data.humedad || 'Cargando...';
+                    document.getElementById('fecha').textContent = data.fecha || 'Cargando...';
+                })
+                .catch(error => {
+                    console.error("Error al obtener los datos:", error);
+                });
+        }
+
+        // Actualizar la gráfica y los datos cada 1 segundo
+        setInterval(function() {
+            // Actualizar la imagen de la gráfica
+            document.getElementById('grafica').src = '/static/grafica.png?' + new Date().getTime();
+            
+            // Obtener los nuevos datos de temperatura, humedad y fecha
+            obtenerDatos();
+        }, 1000);  // Actualiza cada 1 segundo
+    </script>
 </head>
 <body>
     <h1>Gráfica de Temperatura y Humedad</h1>
-    <img src="/static/grafica.png" alt="Gráfica de datos" style="max-width: 100%; height: auto;">
+    <!-- Mostrar la gráfica generada en Python -->
+    <img id="grafica" src="/static/grafica.png" alt="Gráfica de datos" style="max-width: 100%; height: auto;">
+    
+    <!-- Mostrar la temperatura, humedad y fecha más recientes -->
+    <h2>Temperatura: <span id="temperatura">Cargando...</span> °C</h2>
+    <h2>Humedad: <span id="humedad">Cargando...</span> %</h2>
+    <h2>Fecha: <span id="fecha">Cargando...</span></h2>
 </body>
 </html>
