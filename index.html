@@ -3,168 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mascotas</title>
-    <style>
-        body {
-            background-image: url('https://w.wallhaven.cc/full/28/wallhaven-28vg6m.jpg'); /* URL del nuevo fondo */
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            position: relative;
-            animation: fadeIn 1s ease;
-        }
-        .header-image, .logo-image {
-            border-radius: 5px;
-            animation: fadeInUp 1s ease;
-        }
-        .header-image {
-            position: absolute;
-            top: 0;
-            right: 0;
-            margin-top: 20px;
-            margin-right: 20px;
-            max-width: 150px;
-        }
-        .logo-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            margin-top: 20px;
-            margin-left: 20px;
-            max-width: 150px;
-        }
-        .section {
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-        .section h2 {
-            color: white;
-            border-bottom: 2px solid white;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-        .section p {
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-        .section ul {
-            margin-bottom: 20px;
-        }
-        .nav {
-            text-align: center;
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .nav a {
-            color: white;
-            text-decoration: none;
-            padding: 5px 10px;
-            border: 1px solid white;
-            border-radius: 5px;
-            background-color: rgba(0, 0, 0, 0.7);
-            margin: 0 10px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        .nav a:hover {
-            background-color: white;
-            color: #fff;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #333;
-            color: white;
-        }
-        header h1 {
-            font-size: 3em;
-            margin: 0;
-            background-color: transparent; /* Esto hace que el fondo sea transparente */
-            display: inline; /* Esto ajusta el display */
-        }
-
-        @keyframes fadeInUp {
-            from {
-                transform: translateY(20px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-    </style>
+    <title>Página de Inicio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
     <header>
-        <a href="file_upload/uploads/Lobito.jpeg"><img src="file_upload/uploads/Trueno.jpeg" alt="Logo" class="logo-image"></a>
-        <h1>Animales</h1>
+        <h1>Bienvenido a Mi Página Web</h1>
+        <p>Explora los enlaces a continuación</p>
     </header>
-    <div class="nav">
-        <a href="file_upload/index.html">Subir Archivos</a>
-        <a href="../chat/index.php">Sistema de chat con users nuevos</a>
-        <a href="../PaginaWeb/index.php">Sistema de registro</a>
-        <a href="../">Volver</a>
-    </div>
-    <div class="container">
-        <div class="section">
-            <h2>¿Por qué elegimos Debian?</h2>
-            <p>Utilizamos Debian porque queríamos crear un servidor, y Debian es conocida por ser una distribución estable y confiable, perfecta para servidores.</p>
-            <p>También apreciamos su comunidad activa y su compromiso con el software de código abierto.</p>
+    <main>
+        <div class="grid-container">
+            <a href="pagina1.html" class="grid-item">Página 1</a>
+            <a href="pagina2.html" class="grid-item">Página 2</a>
+            <a href="pagina3.html" class="grid-item">Página 3</a>
+            <a href="pagina4.html" class="grid-item">Página 4</a>
         </div>
-
-        <div class="section">
-            <h2>Beneficios de Debian</h2>
-            <ul>
-                <li>Actualizaciones constantes de seguridad</li>
-                <li>Amplia selección de software disponible</li>
-                <li>Documentación detallada y recursos de aprendizaje</li>
-                <li>Compatibilidad con diferentes arquitecturas</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Próximos Proyectos</h2>
-            <p>En el futuro, planeamos explorar la creación de contenedores Docker y aprender sobre administración avanzada de sistemas.</p>
-        </div>
-    </div>
-    <img src="file_upload/uploads/Lobito.jpeg" alt="Logo" class="header-image">
-    <footer>
-        &copy; 2023 PEPITUS EPITITUS
-    </footer>
+    </main>
+    
 </body>
 </html>
