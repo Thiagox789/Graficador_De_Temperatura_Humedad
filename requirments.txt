@@ -1,0 +1,5 @@
+Flask
+sqlite3
+matplotlib
+plotly
+pandas
