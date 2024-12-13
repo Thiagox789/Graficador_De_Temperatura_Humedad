@@ -18,7 +18,7 @@ def conectar_db():
 def home():
     return render_template('index.html')
 
-@app.route('/Get_data')
+@app.route('/get_data')
 def get_data():
     temperatura = None
     humedad = None
@@ -54,7 +54,7 @@ def graficos():
 
 @app.route('/salir')
 def salir():
-    return ""
+    return "Usted ha salido de la pagina web"
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
