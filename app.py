@@ -54,7 +54,7 @@ def graficos():
 
 @app.route('/salir')
 def salir():
-    return "Usted ha salido de la pagina web"
+    return ""
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

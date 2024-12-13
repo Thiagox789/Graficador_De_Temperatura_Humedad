@@ -48,4 +48,4 @@ if __name__ == "__main__":
     print("Subiendo datos a la base de datos")
     while True:
         subir_a_bd()
-        time.sleep(60)
+        time.sleep(120)
