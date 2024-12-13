@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify, send_from_directory
+from flask import Flask, render_template, jsonify, send_from_directory, url_for
 import json
 import os
 import sqlite3
@@ -16,18 +16,13 @@ def conectar_db():
 # Ruta principal
 @app.route('/')
 def home():
-    """Página principal que muestra la gráfica y los datos."""
     return render_template('index.html')
 
-
-@app.route('/get_data')
+@app.route('/Get_data')
 def get_data():
-    """Ruta que devuelve los datos de temperatura y humedad en formato JSON."""
     temperatura = None
     humedad = None
     fecha = None
-
-    # Leer los datos desde el archivo JSON
     if os.path.exists(data_file):
         with open(data_file, 'r') as file:
             try:
@@ -40,22 +35,26 @@ def get_data():
 
     return jsonify({'temperatura': temperatura, 'humedad': humedad, 'fecha': fecha})
 
-@app.route('/ver_registros')
+@app.route('/Registros')
 def ver_registros():
-    """Ruta que muestra todos los registros de la base de datos ordenados por fecha más reciente."""
     conn = conectar_db()
     cursor = conn.cursor()
-
-    # Obtener todos los registros de la tabla, ordenados por fecha descendente
     cursor.execute("SELECT * FROM registros ORDER BY fecha DESC")
     registros = cursor.fetchall()
-
-    # Cerrar la conexión a la base de datos
     conn.close()
-
-    # Renderizar la plantilla para mostrar los registros
     return render_template('registros.html', registros=registros)
 
+@app.route('/dashboard')
+def dashboard():
+    return render_template('pagina1.html')
+
+@app.route('/graficos')
+def graficos():
+    return render_template('Graficos.html')
+
+@app.route('/salir')
+def salir():
+    return ""
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
