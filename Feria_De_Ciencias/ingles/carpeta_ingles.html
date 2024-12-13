@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Field fodler</title>
+    <style>
+        body {
+            background-image: url('../Fondos/fondo3.png'); /* URL del nuevo fondo */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            position: relative;
+            animation: fadeIn 1s ease;
+        }
+        .header-image, .logo-image {
+            border-radius: 5px;
+            animation: fadeInUp 1s ease;
+        }
+        .header-image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin-top: 20px;
+            margin-right: 20px;
+            max-width: 150px;
+        }
+        .logo-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-top: 20px;
+            margin-left: 20px;
+            max-width: 150px;
+        }
+        .section {
+            background-color: #333;
+            color: whitesmoke;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            color: white;
+            border-bottom: 2px solid white;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .section p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .section ul {
+            margin-bottom: 20px;
+        }
+        .nav {
+            text-align: center;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border: 1px solid white;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.7);
+            margin: 0 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .nav a:hover {
+            background-color: white;
+            color: #fff;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: transparent;
+        }
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+            background-color: transparent; /* Esto hace que el fondo sea transparente */
+            display: inline; /* Esto ajusta el display */
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        img {
+            width: 150px; /* Esto establece el ancho en 200 píxeles */
+            height: auto; /* Esto mantiene la proporción de la imagen */
+        }
+        .img1 {
+            width: 200px; /* Esto establece el ancho en 200 píxeles */
+            height: auto; /* Esto mantiene la proporción de la imagen */
+        }
+        .img2 {
+            width: 150px; /* Esto establece el ancho en 200 píxeles */
+            height: auto; /* Esto mantiene la proporción de la imagen */
+        }
+        .img3 {
+            width: 300px; /* Esto establece el ancho en 200 píxeles */
+            height: auto; /* Esto mantiene la proporción de la imagen */
+        }
+        .chatbot-training a {
+            color: orangered; /* Esto establece el color del texto en negro */
+        }
+
+
+    </style>
+     <script type="text/javascript">
+        document.oncontextmenu = function() {
+            return false;
+        };
+    </script>
+</head>
+<body>
+    
+    <header>
+        <h1>Field folder</h1>
+    </header>
+    <div class="nav">
+        <a href="index_ingles.html">Back</a>
+    </div>
+    <div class="container">
+        <div class="section">
+            <h2>Why did we decide to make a website with a chatbot as a project?</h2>
+            <p>We did a website because some of our members knew how to work with HMTL and CSS. And we found it interesting</p>
+        </div>
+
+        <div class="section">
+            <h2>Used laguages and programs </h2>
+            <ul>
+                <p>Apps</p>
+                <li>XAMPP: It is a development tool that allows you to test your PHP-based web development on your own computer without having access to the internet.</li>
+                <p><img src="../Fondos/xamppp.png" alt="im" class="img3"></p>
+                <p></p>
+                <li>Visual Studio code: It is an integrated development environment (IDE) that provides tools and features for writing and debugging code. </li>
+                <p><img src="../Fondos/vsc.png" alt="im" class="img2"></p>
+                <p>Languages</p>
+                <li>HTML: markup language used to define the content of web pages (page structure).</li>
+                <p><img src="../Fondos/html.png" alt="im" class="img1"></p>
+                <li>CSS: Graphic design language for defining and creating the presentation of a structured document written in a markup language</li>
+                <img src="../Fondos/css.png" alt="">
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>How do we make the chatbots?</h2>
+            <img src="../Fondos/botsonic.png" alt="">
+            <p>We created the chatbots using botsonic, which is based on the AI ​​sonic. We created 5 different bots with 5 different emails, one for each system, we customized them and inserted them into the website with a JS script that the chatbot provided us.</p>
+            <p>We train each chatbot with its corresponding topic:</p>
+            <div class="chatbot-training">
+                <h1>Chatbot's training</h1>
+                <ul>
+                    <li><a href="http://www.aula2005.com/html/cn3eso/09circulatorio/09circulatories.htm">Circulatory system</a></li>
+                    <li><a href="http://www.aula2005.com/html/cn3eso/15endocri/15endocries.htm">Endocrine system</a></li>
+                    <li><a href="http://www.aula2005.com/html/cn3eso/08respiratori/08respiracioes.htm">Respiratory system</a></li>
+                    <li><a href="http://www.aula2005.com/html/cn3eso/11relaciosn/11snervioses.htm">Nervous system</a></li>
+                    <li><a href="http://www.aula2005.com/html/cn3eso/07digestiu/07digestioes.htm">Digestive system</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
