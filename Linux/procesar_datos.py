@@ -22,7 +22,7 @@ def graficar_datos():
     plt.legend()
     plt.title("Temperatura y Humedad")
     plt.grid(True)
-    plt.savefig("/root/Graficador_De_Temperatura_Humedad/static/grafica.png")    
+    plt.savefig("/root/Graficador_De_Temperatura_Humedad/Linux/static/grafica.png")    
     plt.close()
 
 def guardar_datos_json(temperatura, humedad):
