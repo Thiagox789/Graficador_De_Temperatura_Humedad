@@ -4,9 +4,10 @@ import json
 from datetime import datetime
 import matplotlib.pyplot as plt
 
-# Configuración del puerto serie
+
 arduino = serial.Serial('/dev/ttyUSB0', 9600, timeout=1)
-# Inicializar listas para almacenar datos
+
+
 temperaturas = []
 humedades = []
 tiempos = []
