@@ -1,0 +1,4 @@
+Flask
+matplotli
+plotly
+pandas
