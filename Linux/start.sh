@@ -1,7 +1,11 @@
 #!/bin/bash
 
 trap 'echo "Interrumpido por el usuario. Deteniendo procesos..."; pkill python; pkill python3; exit 1' SIGINT
+<<<<<<< HEAD
 
+=======
+)
+>>>>>>> c9cd0eb18ef3ccd6b60df25fc4b5cefcfcd24e5f
 echo "Matar todos los procesos de Python..."
 pkill python
 pkill python3
