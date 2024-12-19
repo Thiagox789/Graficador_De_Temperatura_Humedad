@@ -1,0 +1,63 @@
+body {
+  background-image: url("/static/Images/Fondo_Registro.png"); 
+  background-size: cover; 
+  background-position: center; 
+  background-attachment: fixed; 
+  margin: 0;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 300px;
+  margin: 2rem auto;
+  font-family: Arial, sans-serif;
+}
+.input-span {
+  text-align: center;
+  color: #ecf008;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.input-span input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.submit {
+  padding: 0.7rem;
+  border: none;
+  background-color: yellow;
+  color: black;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.submit:hover {
+  background-color: white;
+}
+.span {
+  color: yellow;
+  text-align: center;
+  font-size: 0.9rem;
+}
+.span a {
+  color: white;
+  text-decoration: none;
+}
+.span a:hover {
+  text-decoration: underline;
+}
+
