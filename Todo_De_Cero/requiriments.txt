@@ -1,0 +1,4 @@
+flask-login
+flask-mysqldb
+flask-WTF
+
