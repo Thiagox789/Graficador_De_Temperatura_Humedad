@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        .navbar {
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #4CAF50;
+        }
+        .time {
+            font-size: 16px;
+            color: #777;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            gap: 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            flex: 1 1 calc(30% - 20px);
+            min-width: 250px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .card h2 {
+            margin: 0 0 10px;
+            font-size: 20px;
+        }
+        .card p {
+            color: #555;
+        }
+        .chart-container {
+            flex: 1 1 100%;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            color: #777;
+            border-top: 1px solid #e0e0e0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <h1>Dashboard</h1>
+        <div class="time" id="time"></div>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <i class="fas fa-chart-line" style="font-size: 24px; color: #4CAF50;"></i>
+            <h2>Ventas</h2>
+            <p>Ventas totales del mes: $10,000</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-users" style="font-size: 24px; color: #4CAF50;"></i>
+            <h2>Clientes</h2>
+            <p>Número total de clientes: 150</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-comments" style="font-size: 24px; color: #4CAF50;"></i>
+            <h2>Comentarios</h2>
+            <p>Comentarios positivos: 95%</p>
+        </div>
+        <div class="chart-container">
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const options = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            document.getElementById('time').textContent = now.toLocaleTimeString('es-ES', options);
+        }
+        setInterval(updateTime, 1000);
+        updateTime(); // Llamar una vez al cargar
+    </script>
+
+</body>
+</html>

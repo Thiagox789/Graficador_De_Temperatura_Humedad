@@ -69,8 +69,10 @@ def inicio_sesion():
 @app.route('/dashboard')
 def dashboard():
     if 'username' in session:
-        return f"¡Bienvenido, {session['username']}! <a href='/logout'>Cerrar sesión</a>"
+        usuario = session['username']  # Obtiene el nombre de usuario desde la sesión
+        return render_template('dashboard.html', usuario=usuario)
     else:
+        flash('Debes iniciar sesión para acceder al dashboard.')
         return redirect(url_for('inicio_sesion'))
 
 @app.route('/logout')
